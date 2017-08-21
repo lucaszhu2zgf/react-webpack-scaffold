@@ -1,0 +1,54 @@
+{
+  "name": "react-webpack-scaffold",
+  "version": "1.0.0",
+  "description": "using react with webpack",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test",
+    "dev": "webpack-dev-server --open --hot --config webpack.config.dev.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lucaszhu2zgf/react-webpack-scaffold.git"
+  },
+  "keywords": [
+    "react",
+    "webpack",
+    "spa"
+  ],
+  "author": "lucaszhu@webank.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lucaszhu2zgf/react-webpack-scaffold/issues"
+  },
+  "homepage": "https://github.com/lucaszhu2zgf/react-webpack-scaffold#readme",
+  "dependencies": {
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-router-dom": "^4.1.2"
+  },
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^0.28.5",
+    "eslint": "^4.5.0",
+    "eslint-config-react-app": "^2.0.0",
+    "eslint-loader": "^1.9.0",
+    "eslint-plugin-import": "^2.7.0",
+    "file-loader": "^0.11.2",
+    "html-webpack-plugin": "^2.30.1",
+    "postcss-loader": "^2.0.6",
+    "react-dev-utils": "^3.1.1",
+    "react-error-overlay": "^1.0.10",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.18.2",
+    "url-loader": "^0.5.9",
+    "webpack": "^3.5.5",
+    "webpack-dev-server": "^2.7.1"
+  }
+}

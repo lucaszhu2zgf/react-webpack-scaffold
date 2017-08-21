@@ -6,8 +6,8 @@ class Home extends Component{
       <div>
         <h1>App</h1>
         <ul>
-          <li><Link to="/about">About</Link></li>
-          <li><Link to="/inbox">Inbox</Link></li>
+          <li>asdfafd</li>
+          <li>h42wressdddd</li>
         </ul>
         {this.props.children}
       </div>

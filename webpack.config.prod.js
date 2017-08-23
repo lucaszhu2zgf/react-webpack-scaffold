@@ -6,10 +6,6 @@ const path = require('path'),
       CleanWebpackPlugin = require('clean-webpack-plugin'),
       ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-const extractPageSass = new ExtractTextPlugin({
-    filename: "styles/base.[hash:8].css"
-});
-
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
@@ -48,14 +44,10 @@ module.exports = {
         },
         {
           test: /\.scss$/,
-          use: extractPageSass.extract({
-              use: [{
-                  loader: "css-loader"
-              }, {
-                  loader: "sass-loader"
-              }],
-              // use style-loader in development
-              fallback: "style-loader"
+          use: ExtractTextPlugin.extract({
+            fallback: 'style-loader',
+            use: ['css-loader', 'sass-loader?sourceMap'],
+            publicPath: "../"
           })
         }
       ]
@@ -87,7 +79,7 @@ module.exports = {
       new webpack.optimize.CommonsChunkPlugin({
         name: "common"
       }),
-      extractPageSass,
+      new ExtractTextPlugin('style/base.[hash:8].css'),
       // new BundleAnalyzerPlugin()
     ]
 };

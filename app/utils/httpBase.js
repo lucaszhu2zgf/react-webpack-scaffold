@@ -6,7 +6,7 @@ let httpProcessor = function(method, url, data){
     url: url,
     data: data || null,
     method: method,
-    baseURL: 'https://some-domain.com/api/',
+    baseURL: HTTP_BASE_URL,
     timeout: 10000
     // withCredentials: true
   };

@@ -65,7 +65,8 @@ module.exports = {
       new webpack.DefinePlugin({
         'process.env': {
           NODE_ENV: JSON.stringify('production')
-        }
+        },
+        HTTP_BASE_URL: JSON.stringify('https://www.domain.com/api/')
       }),
       // uglify js files
       new webpack.optimize.UglifyJsPlugin({

@@ -46,7 +46,10 @@ module.exports = {
       ]
     },
     plugins: [
+      new webpack.DefinePlugin({
+        HTTP_BASE_URL: JSON.stringify('https://www.test-domain.com/api/')
+      }),
       new HtmlWebpackPlugin({template: 'app/index.html'}),
-      new webpack.HotModuleReplacementPlugin()
+      new webpack.HotModuleReplacementPlugin(),
     ]
 };

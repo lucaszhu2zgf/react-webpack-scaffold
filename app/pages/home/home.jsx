@@ -22,7 +22,7 @@ class Home extends Component{
   render() {
     return (
       <div>
-        <h1 className="warn">this is home page</h1>
+        <h1 className="warn">this is home page 哈哈哈哈</h1>
         <img src={logoImage}/>
       </div>
     )

@@ -4,7 +4,7 @@ const path = require('path'),
 
 module.exports = {
     entry: {
-      verdor: ['react', 'react-dom', 'react-router'],
+      // verdor: ['react', 'react-dom', 'react-router'],
       app: path.resolve(__dirname, 'app/app.js'),
       // util: path.resolve(__dirname, 'app/utils')
     },

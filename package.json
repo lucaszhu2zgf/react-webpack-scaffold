@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/lucaszhu2zgf/react-webpack-scaffold#readme",
   "dependencies": {
+    "axios": "^0.16.2",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-router": "^3.0.5"

@@ -9,6 +9,7 @@ import App from './pages/app/app.jsx'
 import Home from './pages/home/home.jsx'
 import About from './pages/about/about.jsx'
 import Inbox from './pages/inbox/inbox.jsx'
+import ErrorpPage from './pages/error/error.jsx'
 
 ReactDOM.render((
   <Router history={hashHistory}>
@@ -17,5 +18,6 @@ ReactDOM.render((
       <Route path="/about" component={About}/>
       <Route path="/inbox" component={Inbox}/>
     </Route>
+    <Route path="/error" component={ErrorpPage}/>
   </Router>
 ), document.getElementById('app'));

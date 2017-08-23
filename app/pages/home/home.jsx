@@ -12,8 +12,7 @@ class Home extends Component{
   }
 
   componentDidMount(){
-  console.log(0)
-    httpApi.getUerInfo.then(res => {
+    httpApi.getUerInfo().then(res => {
       console.log(res);
     }).then(err => {
       console.error(err);

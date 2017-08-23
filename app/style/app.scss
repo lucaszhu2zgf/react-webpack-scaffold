@@ -8,4 +8,9 @@ html,body,h1,h2,h3,h4,h5,ul,dl,dt,dd,p,ol{
 body{
   font-size: 14px;
   line-height: 1.34;
+  background-color: #f7f8f9;
+  // using images in css file
+  background-image: url(../images/bg.png);
+  background-repeat: no-repeat;
+  background-position: center;
 }

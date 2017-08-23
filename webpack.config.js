@@ -45,11 +45,6 @@ module.exports = {
         }
       ]
     },
-    // devServer: {
-    //   contentBase: path.join(__dirname, "build"),
-    //   hot: true,
-    //   port: 9000
-    // },
     plugins: [
       new HtmlWebpackPlugin({template: 'app/index.html'}),
       new webpack.HotModuleReplacementPlugin()

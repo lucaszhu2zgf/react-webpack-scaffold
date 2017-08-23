@@ -4,7 +4,7 @@ class Inbox extends React.Component{
   render() {
     return (
       <div>
-        <h2>Inbox sdddss</h2>
+        <h2>this is inbox page</h2>
       </div>
     )
   }

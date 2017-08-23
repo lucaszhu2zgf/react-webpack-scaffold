@@ -4,8 +4,8 @@
   "description": "using react with webpack",
   "main": "index.js",
   "scripts": {
-    "test": "npm run test",
-    "dev": "webpack-dev-server --open --hot --config webpack.config.dev.js"
+    "start": "webpack-dev-server --open --progress --colors --content-base ./build",
+    "build": "webpack --progress --colors"
   },
   "repository": {
     "type": "git",
@@ -25,7 +25,7 @@
   "dependencies": {
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
-    "react-router-dom": "^4.1.2"
+    "react-router": "^3.0.5"
   },
   "devDependencies": {
     "babel": "^6.23.0",

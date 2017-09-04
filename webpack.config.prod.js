@@ -4,9 +4,15 @@ const path = require('path'),
       webpack = require('webpack'),
       HtmlWebpackPlugin = require('html-webpack-plugin'),
       CleanWebpackPlugin = require('clean-webpack-plugin'),
-      ExtractTextPlugin = require('extract-text-webpack-plugin');
+      ExtractTextPlugin = require('extract-text-webpack-plugin'),
+      StyleExtHtmlWebpackPlugin = require('style-ext-html-webpack-plugin');
 
 // const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+
+// extract base css rules into a file
+const extractBaseCSS = new ExtractTextPlugin('base.[hash:8].css');
+// extract pages' css rules into a file
+const extractPagesCSS = new ExtractTextPlugin('css/pages.[hash:8].css');
 
 module.exports = {
     entry: {
@@ -14,7 +20,7 @@ module.exports = {
     },
     output: {
         path: path.resolve(__dirname, 'build'),
-        filename: 'js/[name].[hash:8].js'
+        filename: 'js/[name].[chunkhash:8].js'
     },
     devtool: 'cheap-module-source-map',
     module: {
@@ -44,10 +50,19 @@ module.exports = {
         },
         {
           test: /\.scss$/,
-          use: ExtractTextPlugin.extract({
+          include: path.resolve(__dirname, 'app/style'),
+          use: extractBaseCSS.extract({
+            fallback: 'style-loader',
+            use: ['css-loader', 'sass-loader?sourceMap']
+          })
+        },
+        {
+          test: /\.scss$/,
+          include: path.resolve(__dirname, 'app/pages'),
+          use: extractPagesCSS.extract({
             fallback: 'style-loader',
             use: ['css-loader', 'sass-loader?sourceMap'],
-            publicPath: "../"
+            publicPath: '../'
           })
         }
       ]
@@ -80,7 +95,11 @@ module.exports = {
       new webpack.optimize.CommonsChunkPlugin({
         name: "common"
       }),
-      new ExtractTextPlugin('style/base.[hash:8].css'),
+      extractBaseCSS,
+      // trans base.css into inline style
+      new StyleExtHtmlWebpackPlugin(),
+      // use link tag to load page css file
+      extractPagesCSS
       // new BundleAnalyzerPlugin()
     ]
 };
